@@ -1,0 +1,11 @@
+services:
+  react:
+    build:
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
+      target: devcontainer
+    volumes:
+      - code:/code
+    command: sleep infinity
+volumes:
+  code:
