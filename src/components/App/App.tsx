@@ -1,18 +1,25 @@
 import React from 'react';
 import Card from '../Card';
 import { useDirectory } from '../DirectoryProvider';
+import ShowDirectory from '../ShowDirectory/ShowDirectory';
 
 const App = () => {
-  const {} = useDirectory();
+  const { cards, dispatch } = useDirectory();
 
   return (
     <div className="app">
       <header>
-        <button className="showDirectory">SHOW DIRECTORY</button>
+        <ShowDirectory dispatch={dispatch} />
         <button className="saveScript">SAVE SCRIPT</button>
       </header>
-
-      <Card />
+      <div className="cards">
+        {cards.map((cardProps, index) => (
+          <Card
+            {...cardProps}
+            key={Math.floor(Math.random() * (index + 1) * 10000000000)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

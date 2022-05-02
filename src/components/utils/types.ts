@@ -25,15 +25,19 @@ export interface DirectoryProviderValue {
 }
 
 export enum DirectoryTypeEnum {
-  someKey = 'some value',
+  GET_IMAGE_HANDLES = 'GET_IMAGE_HANDLES',
 }
 
 export type DirectoryAction = {
-  type: DirectoryTypeEnum.someKey;
-  payload: 'hi';
+  type: DirectoryTypeEnum.GET_IMAGE_HANDLES;
+  payload: { newState: CardProps[] };
 };
 
 export type DirectoryReducer = (
   state: DirectoryState,
   action: DirectoryAction
 ) => DirectoryState;
+
+export interface ShowDirectoryProps {
+  dispatch: DirectoryDispatch;
+}
