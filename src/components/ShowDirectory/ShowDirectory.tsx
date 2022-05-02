@@ -1,7 +1,7 @@
 import React from 'react';
+import { useDirectory } from "../DirectoryProvider/DirectoryProvider";
 import { DirectoryTypeEnum } from '../utils/types';
 import showDirectoryPicker from './middleware/showDirectoryPicker';
-import { useDirectory } from "../DirectoryProvider/DirectoryProvider";
 
 const ShowDirectory = () => {
   const { dispatch } = useDirectory();

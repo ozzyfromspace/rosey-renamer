@@ -3,6 +3,7 @@ export interface ImageData {
   imageAlt: string;
   originalName: string;
   currentName: string;
+  fileExt: string;
 }
 
 export interface CardData {
@@ -10,7 +11,6 @@ export interface CardData {
   isLocked: boolean;
   isEditMode: boolean;
   cardId: string;
-  currentIndex: number | null;
 }
 
 export interface CardProps extends CardData {}
@@ -33,6 +33,10 @@ export interface ReorderCardsPayload {
   sourceIndex: number;
 }
 
+export interface SetBaseNamePayload {
+  baseName: string;
+}
+
 export interface ReorderCardsProps extends ReorderCardsPayload {
   cards: CardData[];
 }
@@ -40,6 +44,7 @@ export interface ReorderCardsProps extends ReorderCardsPayload {
 export enum DirectoryTypeEnum {
   GET_IMAGE_HANDLES = 'GET_IMAGE_HANDLES',
   REORDER_CARDS = 'REORDER_CARDS',
+  SET_BASE_NAME = 'SET_BASE_NAME',
 }
 
 export type DirectoryAction =
@@ -50,7 +55,11 @@ export type DirectoryAction =
   | {
       type: DirectoryTypeEnum.REORDER_CARDS;
       payload: ReorderCardsPayload;
-    };
+    }
+  | {
+      type: DirectoryTypeEnum.SET_BASE_NAME;
+      payload: SetBaseNamePayload;
+    }
 
 export type DirectoryReducer = (
   state: DirectoryState,

@@ -1,17 +1,75 @@
 .cards {
-  width: 250px;
-  background-color: gold;
+  margin-top: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 190px;
+  background-color: rgb(237, 194, 139);
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
+body {
+  background-color: antiquewhite;
+}
+
 .card {
-  width: 200px;
-  border: 6px solid red;
-  margin-bottom: 6px;
+  background-color: white;
+  width: 160px;
+  border: 1px solid rgb(195, 118, 18);
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.card:last-child {
+  margin-bottom: 2rem;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 img {
-  height: 60px;
+  height: 160px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+header {
+  background-color: rgb(195, 118, 18);
+  padding: 1.5rem;
+  margin: 0.5rem;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.showDirectory {
+  margin-right: 20px;
+}
+
+.baseName {
+  margin-top: 10px;
+}
+
+.baseNameInput {
+  margin-right: 20px;
+}
+
+.currentName {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.buttons {
+  margin: auto;
+  width: 160px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.7rem;
 }

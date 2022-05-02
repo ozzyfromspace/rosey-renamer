@@ -12,10 +12,10 @@ const Card = (props: CardProps) => {
       </div>
       <div className="editBox">
         <p className="currentName">{imageData.currentName}</p>
-        <div className="buttons">
+        {/* <div className="buttons">
           <button className="edit">{isEditMode ? 'save' : 'edit'}</button>
           <button className="lock">{isLocked ? 'unlock' : 'lock'}</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -27,11 +27,11 @@ const defaultProps: CardData = {
     currentName: 'default',
     imageAlt: '',
     imageSrc: '#',
+    fileExt: 'jpeg',
   },
   isEditMode: false,
   isLocked: false,
   cardId: '1234',
-  currentIndex: 0,
 };
 
 Card.defaultProps = defaultProps;

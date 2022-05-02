@@ -1,25 +1,29 @@
 import { v4 as uuidv4 } from 'uuid';
 import { CardData, ImageData } from "../../utils/types";
 
-const setNewCards = (images: File[]) => {
+const createNewCards = (images: File[]) => {
   const newCards: CardData[] = [];
 
-  for (let index = 0; index < images.length; index++) {
-    const image = images[index];
+  for (const image of images) {
 
     const imageSrc = URL.createObjectURL(image);
+
+    const fileParts = image.name.split('.');
+    const fileExt = fileParts[fileParts.length - 1];
+    const fileName = fileParts.slice(0, fileParts.length - 1).join('');
+
     const newImageData: ImageData = {
-      currentName: image.name,
+      currentName: fileName,
       imageAlt: 'local user image',
       imageSrc,
-      originalName: image.name,
+      originalName: fileName,
+      fileExt: fileExt,
     };
     const CardData: CardData = {
       imageData: newImageData,
       isEditMode: false,
       isLocked: false,
       cardId: uuidv4(),
-      currentIndex: index,
     };
     newCards.push(CardData);
   };
@@ -27,4 +31,4 @@ const setNewCards = (images: File[]) => {
   return newCards;
 };
 
-export default setNewCards;
+export default createNewCards;

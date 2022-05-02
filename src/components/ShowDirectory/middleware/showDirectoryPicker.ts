@@ -3,18 +3,27 @@ const showDirectoryPicker = async (): Promise<File[] | null> => {
 
   if (typeof pickerFn === 'function') {
     try {
-      const dirHandle = await pickerFn();
+      const dirHandle = await pickerFn({ startIn: 'documents' });
       const imagePromises: Promise<File>[] = [];
 
       for await (const imageHandle of dirHandle.values()) {
-        const filePart = imageHandle.name.split('.');
-        const filePartLen = filePart.length;
+        const fileParts = imageHandle.name.split('.');
 
-        if (filePartLen === 1) continue;
+        if (fileParts.length === 1) continue;
 
-        const fileExt = filePart[filePartLen - 1];
+        const fileExt = fileParts.pop();
 
-        const extensions = ['jpeg'];
+        const extensions = [
+          'jpeg',
+          'jpg',
+          'webp',
+          'png',
+          'tif',
+          'tiff',
+          'bmp',
+          'gif',
+        ];
+        
         const isImage =
           imageHandle.kind === 'file' && extensions.includes(fileExt);
 
