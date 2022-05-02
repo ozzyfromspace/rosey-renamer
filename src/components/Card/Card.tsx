@@ -28,8 +28,6 @@ const defaultProps: CardProps = {
   },
   isEditMode: false,
   isLocked: false,
-  onEditStart: () => {},
-  onEditEnd: () => {},
 }
 
 Card.defaultProps = defaultProps;

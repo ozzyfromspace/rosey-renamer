@@ -1,20 +1,25 @@
 import React, { createContext, useContext, useEffect, useReducer } from 'react';
-import { DirectoryProps, DirectoryState } from '../utils/types';
+import { DirectoryProps, DirectoryProviderValue } from '../utils/types';
 import directoryReducer from './directoryReducer';
 
-const defaultValue: DirectoryState = { value: null };
+const defaultProviderValue: DirectoryProviderValue = {
+  cards: [],
+  dispatch: () => {},
+};
 
-const DirectoryContext = createContext(defaultValue);
+const DirectoryContext = createContext(defaultProviderValue);
 
 const DirectoryProvider = (props: DirectoryProps) => {
   const { children } = props;
 
-  const [state, dispatch] = useReducer(directoryReducer, defaultValue);
+  const [cards, dispatch] = useReducer(directoryReducer, []);
 
   useEffect(() => {}, []);
 
+  const providerValue: DirectoryProviderValue = { cards, dispatch };
+
   return (
-    <DirectoryContext.Provider value={defaultValue}>
+    <DirectoryContext.Provider value={providerValue}>
       {children}
     </DirectoryContext.Provider>
   );

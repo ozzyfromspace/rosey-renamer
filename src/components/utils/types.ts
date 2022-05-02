@@ -9,16 +9,19 @@ export interface CardProps {
   imageData: ImageData;
   isLocked: boolean;
   isEditMode: boolean;
-  onEditStart: () => void;
-  onEditEnd: () => void;
 }
 
 export interface DirectoryProps {
   children: React.ReactNode;
 }
 
-export interface DirectoryState {
-  value: null;
+export type DirectoryDispatch = React.Dispatch<DirectoryAction>;
+
+export type DirectoryState = CardProps[];
+
+export interface DirectoryProviderValue {
+  cards: CardProps[];
+  dispatch: DirectoryDispatch;
 }
 
 export enum DirectoryTypeEnum {
