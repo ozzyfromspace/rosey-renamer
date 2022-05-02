@@ -30,7 +30,7 @@ export enum DirectoryTypeEnum {
 
 export type DirectoryAction = {
   type: DirectoryTypeEnum.GET_IMAGE_HANDLES;
-  payload: { newState: CardProps[] };
+  payload: { images: File[] };
 };
 
 export type DirectoryReducer = (
