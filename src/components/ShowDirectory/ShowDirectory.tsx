@@ -1,9 +1,10 @@
 import React from 'react';
-import { DirectoryTypeEnum, ShowDirectoryProps } from '../utils/types';
+import { DirectoryTypeEnum } from '../utils/types';
 import showDirectoryPicker from './middleware/showDirectoryPicker';
+import { useDirectory } from "../DirectoryProvider/DirectoryProvider";
 
-const ShowDirectory = (props: ShowDirectoryProps) => {
-  const { dispatch } = props;
+const ShowDirectory = () => {
+  const { dispatch } = useDirectory();
 
   const openPicker = () => {
     (async () => {

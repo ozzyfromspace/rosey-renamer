@@ -1,0 +1,17 @@
+.cards {
+  width: 250px;
+  background-color: gold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  width: 200px;
+  border: 6px solid red;
+  margin-bottom: 6px;
+}
+
+img {
+  height: 60px;
+}

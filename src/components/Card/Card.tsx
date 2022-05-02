@@ -1,5 +1,6 @@
 import React from 'react';
-import { CardProps } from '../utils/types';
+import { CardData, CardProps } from '../utils/types';
+import './Card.css';
 
 const Card = (props: CardProps) => {
   const { imageData, isEditMode, isLocked } = props;
@@ -13,14 +14,14 @@ const Card = (props: CardProps) => {
         <p className="currentName">{imageData.currentName}</p>
         <div className="buttons">
           <button className="edit">{isEditMode ? 'save' : 'edit'}</button>
-          <button className="lock">{isLocked ? 'locked' : 'unlocked'}</button>
+          <button className="lock">{isLocked ? 'unlock' : 'lock'}</button>
         </div>
       </div>
     </div>
   );
 };
 
-const defaultProps: CardProps = {
+const defaultProps: CardData = {
   imageData: {
     originalName: 'default',
     currentName: 'default',
@@ -29,6 +30,8 @@ const defaultProps: CardProps = {
   },
   isEditMode: false,
   isLocked: false,
+  cardId: '1234',
+  currentIndex: 0,
 };
 
 Card.defaultProps = defaultProps;
