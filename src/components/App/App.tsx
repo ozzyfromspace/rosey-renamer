@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Card from '../Card';
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div className="app">
+      <header>
+        <button className="showDirectory">SHOW DIRECTORY</button>
+        <button className="saveScript">SAVE SCRIPT</button>
+      </header>
 
-export default App
+      <Card />
+    </div>
+  );
+};
+
+export default App;
