@@ -59,7 +59,7 @@ export interface ReorderCardsProps extends ReorderCardsPayload {
 }
 
 export enum DirectoryTypeEnum {
-  GET_IMAGE_HANDLES = 'GET_IMAGE_HANDLES',
+  CREATE_NEW_CARDS = 'CREATE_NEW_CARDS',
   REORDER_CARDS = 'REORDER_CARDS',
   SET_BASE_NAME = 'SET_BASE_NAME',
   MOVE_CARD = 'MOVE_CARD',
@@ -68,7 +68,7 @@ export enum DirectoryTypeEnum {
 
 export type DirectoryAction =
   | {
-      type: DirectoryTypeEnum.GET_IMAGE_HANDLES;
+      type: DirectoryTypeEnum.CREATE_NEW_CARDS;
       payload: { images: File[] };
     }
   | {

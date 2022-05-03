@@ -9,7 +9,7 @@ const createNewCards = (state: DirectoryState, images: File[]): DirectoryState =
 
     const fileParts = image.name.split('.');
     const fileExt = fileParts[fileParts.length - 1];
-    const fileName = fileParts.slice(0, fileParts.length - 1).join('');
+    const fileName = fileParts.slice(0, fileParts.length - 1).join('.');
 
     const newImageData: ImageData = {
       currentName: fileName,

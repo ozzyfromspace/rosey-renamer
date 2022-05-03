@@ -14,7 +14,7 @@ const ShowDirectory = () => {
       if (images.length === 0) return;
 
       return dispatch({
-        type: DirectoryTypeEnum.GET_IMAGE_HANDLES,
+        type: DirectoryTypeEnum.CREATE_NEW_CARDS,
         payload: {
           images,
         },

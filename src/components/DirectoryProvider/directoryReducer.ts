@@ -7,7 +7,7 @@ import setBaseName from './middleware/setBaseName';
 
 const directoryReducer: DirectoryReducer = (state, action) => {
   switch (action.type) {
-    case DirectoryTypeEnum.GET_IMAGE_HANDLES:
+    case DirectoryTypeEnum.CREATE_NEW_CARDS:
       return createNewCards(state, action.payload.images);
     case DirectoryTypeEnum.REORDER_CARDS:
       return reorderCards(state, action.payload);
