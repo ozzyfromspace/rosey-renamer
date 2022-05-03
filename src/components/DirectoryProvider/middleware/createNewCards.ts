@@ -8,7 +8,7 @@ const createNewCards = (state: DirectoryState, images: File[]): DirectoryState =
     const imageSrc = URL.createObjectURL(image);
 
     const fileParts = image.name.split('.');
-    const fileExt = fileParts[fileParts.length - 1];
+    const fileExt = fileParts[fileParts.length - 1].toLowerCase();
     const fileName = fileParts.slice(0, fileParts.length - 1).join('.');
 
     const newImageData: ImageData = {
@@ -27,7 +27,13 @@ const createNewCards = (state: DirectoryState, images: File[]): DirectoryState =
     newCards.push(CardData);
   }
 
-  return { ...state, cards: newCards };
+  const sortedCards = newCards.sort((cardData1, cardData2) => {
+    const fileNameA = cardData1.imageData.originalName;
+    const fileNameB = cardData2.imageData.originalName;
+    return fileNameA < fileNameB ? -1 : 1;
+  });
+
+  return { ...state, cards: sortedCards };
 };
 
 export default createNewCards;
