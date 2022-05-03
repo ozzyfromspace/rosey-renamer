@@ -1,0 +1,12 @@
+{
+  "name": "Rosey Renamer",
+  "dockerComposeFile": "./docker-container.yml",
+  "service": "react",
+  "workspaceFolder": "/code",
+  "settings": {},
+  "extensions": ["dbaeumer.vscode-eslint"],
+  "features": {
+    "git": "latest",
+    "fish": "latest"
+  }
+}

@@ -1,0 +1,121 @@
+.cards {
+  margin-top: 12px;
+  /* margin-left: auto;
+  margin-right: auto;
+  width: 190px; */
+  /* width: 800px; */
+  /* background-color: rgb(237, 194, 139); */
+  background-color: rgb(252, 247, 241);
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 190px);
+  place-items: center;
+  gap: 1rem;
+}
+
+.img_overlay {
+  filter: grayscale(85%);
+  opacity: 60%;
+}
+
+.bg_overlay {
+  background-color: rgb(172, 172, 172);
+  transform: scale(0.9);
+}
+
+.text_overlay {
+  color: gray;
+}
+
+/* .card_overlay {
+} */
+
+body {
+  background-color: antiquewhite;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  width: 160px;
+  border: 1px solid rgb(195, 118, 18);
+  overflow: hidden;
+  /* margin-top: 2rem; */
+}
+
+.delete {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.delete p {
+  color: white;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+}
+
+/* .card:last-child {
+  margin-bottom: 2rem;
+} */
+
+.image {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+img {
+  height: 120px;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+header {
+  /* background-color: rgb(237, 194, 139); */
+  background-color: rgb(252, 247, 241);
+  padding: 1.5rem;
+  margin: 0.5rem;
+  width: 300px;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+}
+
+.showDirectory {
+  margin-right: 20px;
+}
+
+.baseName {
+  margin-top: 10px;
+}
+
+.baseNameInput {
+  margin-right: 20px;
+}
+
+.currentName {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.buttons {
+  margin: auto;
+  width: 160px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 0.7rem;
+}
