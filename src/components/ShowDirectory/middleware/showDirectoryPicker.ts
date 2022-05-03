@@ -11,7 +11,7 @@ const showDirectoryPicker = async (): Promise<File[] | null> => {
 
         if (fileParts.length === 1) continue;
 
-        const fileExt = fileParts.pop();
+        const fileExt = fileParts.pop().toLowerCase();
 
         const extensions = [
           'jpeg',
@@ -23,7 +23,7 @@ const showDirectoryPicker = async (): Promise<File[] | null> => {
           'bmp',
           'gif',
         ];
-        
+
         const isImage =
           imageHandle.kind === 'file' && extensions.includes(fileExt);
 
