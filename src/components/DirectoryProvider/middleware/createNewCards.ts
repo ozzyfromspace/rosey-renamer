@@ -1,11 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
-import { CardData, ImageData } from "../../utils/types";
+import { CardData, DirectoryState, ImageData } from '../../utils/types';
 
-const createNewCards = (images: File[]) => {
+const createNewCards = (state: DirectoryState, images: File[]): DirectoryState => {
   const newCards: CardData[] = [];
 
   for (const image of images) {
-
     const imageSrc = URL.createObjectURL(image);
 
     const fileParts = image.name.split('.');
@@ -26,9 +25,9 @@ const createNewCards = (images: File[]) => {
       cardId: uuidv4(),
     };
     newCards.push(CardData);
-  };
+  }
 
-  return newCards;
+  return { ...state, cards: newCards };
 };
 
 export default createNewCards;

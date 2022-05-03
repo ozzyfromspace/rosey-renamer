@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="app">
       <DirectoryProvider>
-        <header>
+        <header><div style={{marginBottom: '0.5rem'}}>Remember, click, not drag.</div>
           <ShowDirectory />
           <SaveScript />
           <BaseName />
